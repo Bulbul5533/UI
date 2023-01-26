@@ -1,0 +1,73 @@
+    const data = new monmodel(
+        {
+            Employee_id: req.body.Employee_id,
+            Personal_id: req.body.Personal_id,
+            Title: req.body.Title,
+            First_name: req.body.First_name,
+            Last_name: req.body.Last_name,
+            DOB: req.body.DOB,
+            Mobile_Number: req.body.Mobile_Number,
+            City: req.body.City,
+            Address: req.body.Address,
+            Email: req.body.Email,
+            Postal_code: req.body.Postal_code,
+            Qualification: req.body.Qualification,
+            Current_experience: req.body.Current_experience,
+            Start_date: req.body.Start_date,
+            End_date: req.body.End_date,
+            Type_of_employee: req.body.Type_of_employee,
+            Gender: req.body.Gender,
+            Marital_Status: req.body.Marital_Status,
+            Role: req.body.Role,
+            Project_Domain: req.body.Project_Domain
+        })
+
+
+
+         {
+        "Employee_id": "S004",
+        "Personal_id": "852369741",
+        "Title": "Mrs",
+        "First_name": "Sarah",
+        "Last_name": "Bhai",
+        "DOB":"26/06/1996",
+        "Mobile_Number": "9876599210",
+        "City": "Salem",
+        "Address": " Dubai Main Road",
+        "Email": "sarah@gmail.com",
+        "Postal_code": "636113",
+        "Qualification": "PHD",
+        "Current_experience": "2",
+        "Start_date": "",
+        "End_date": "",
+        "Type_of_employee":"Permanent",
+        "Gender": "Female",
+        "Marital_Status": "Single",
+        "Role": "Software Engineer",
+        "Project_Domain": "Banking"
+    }
+
+
+
+    const emp1 =  Blog({
+        "Employee_id": "S004",
+        "Personal_id": "852369741",
+        "Title": "Mrs",
+        "First_name": "Sarah",
+        "Last_name": "Bhai",
+        "DOB":"26/06/1996",
+        "Mobile_Number": "9876599210",
+        "City": "Salem",
+        "Address": " Dubai Main Road",
+        "Email": "sarah@gmail.com",
+        "Postal_code": "636113",
+        "Qualification": "PHD",
+        "Current_experience": "2",
+        "Start_date": "",
+        "End_date": "",
+        "Type_of_employee":"Permanent",
+        "Gender": "Female",
+        "Marital_Status": "Single",
+        "Role": "Software Engineer",
+        "Project_Domain": "Banking"
+    });

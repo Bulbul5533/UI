@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="header">
+        <app-uiheader [itemscount]="watchingvalues()"></app-uiheader>
+    </div>
+    <br>
+    <br>
+    <app-uisearch class="searchproduct" (emitSearchedTxt)="SearchEvent($event)"></app-uisearch>
+    <app-filter class="filterproduct" [All]="returnAllProductcount()" [Mobile]="returnMobileCount()"
+        [HeadPhone]="returnHeadPhoneCount()" [Powerbank]="returnPowerbankCount()"
+        (filtertxt)="filteredtextevent($event)"></app-filter>
+
+    <div class="container productshow p-5 ">
+        <div *ngFor="let product of var_product" class="m-4">
+            <ng-container *ngIf="filteredtxt === 'All'|| product.SubCategory.includes(filteredtxt)">
+                <ng-container *ngIf="SearchedTxt === ' '|| product.SubCategory.toLowerCase().includes(SearchedTxt)">
+                    <mat-card [ngStyle]="{backgroundColor: product.Status === 'Available'?'white':'#cbd9e7'}"
+                        class="matcard" (click)="Addtocart(product)">
+                        <mat-card-content>
+                            <div class="row p-3">
+                                <div class="col-lg-4">
+                                    <img src="{{product.ProductImage}}" class="imgesource">
+                                    <div class="Prostatus"
+                                        [ngStyle]="{color:product.Status==='Available'?'Green':'Red'}">
+                                        <p class="d-flex justify-content-center"> {{product.Status}}</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <p><b> {{product.ProductName}}</b></p>
+                                    <p>{{product.ProductDesc}}</p>
+                                </div>
+                                <mat-card-actions class="col">
+                                    <p class="col"><b>Price: </b>{{product.Price | currency}}</p>
+
+                                    <button class="btn btn-outline-warning col"
+                                        *ngIf="product.Status==='Available'else:notifyme"
+                                        (click)="Addtocart(product)">Show Desc</button>
+                                    <ng-template #notifyme>
+                                        <button class="btn btn-outline-danger" (click)="Notify(product)">Notify
+                                            Me</button>
+                                    </ng-template>
+                                </mat-card-actions>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+    <br>
+    <div class="footer">
+        <app-ui-footer></app-ui-footer>
+        
+    </div>
+</div>

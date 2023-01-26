@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="row">
+        <app-uiheader></app-uiheader>
+    </div>
+</div>
+<div class="container">
+    <div class="row m-5">
+        <mat-card class="">
+            <mat-card-content class="">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <img src="{{var_produDetails.ProductImage}}" class="imgesource">
+                    </div>
+                    <div class="col-lg-6">
+                        <h4> Product Name: {{var_produDetails.ProductName}}</h4>
+                        <h3>Price: {{var_produDetails.Price|currency}}</h3>
+                        <h3>Description:</h3><a>{{var_produDetails.ProductDesc}}</a>
+                        <h3>
+                            <p> Available offers</p>
+                        </h3>
+
+                        <ul>
+                            <li>Bank Offer5% Cashback on Flipkart Axis Bank CardT&C</li>
+
+                            <li>Special PriceGet extra ₹12901 off (price inclusive of cashback/coupon)T&C</li>
+
+                            <li>Partner OfferPurchase now & get a surprise cashback coupon for January / February
+                                2023Know More</li>
+
+                            <li>Partner OfferSign up for Flipkart Pay Later and get Flipkart Gift Card worth up to
+                                ₹500*Know More</li>
+
+                            <li>EMI starting from ₹2,290/monthView Plans</li>
+                        </ul>
+                        <div class="row">
+                            <button type="submit" class="btn btn-outline-warning btn-sm offset-lg-8 col-lg-6">Buy
+                                Now</button>
+                        </div>
+                    </div>
+
+                </div>
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+</div>

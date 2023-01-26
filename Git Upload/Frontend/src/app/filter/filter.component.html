@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <mat-label class=""><b>Filter: &nbsp;</b> </mat-label>
+        <div class="fiteroptions ">
+            <input type="radio" name="filter" value="All" [(ngModel)]="filtertext" (change)="RaisingEvent()">
+            <span>All({{All}})</span> &nbsp;
+            <input type="radio" name="filter" value="Mobile" [(ngModel)]="filtertext" (change)="RaisingEvent()">
+            <span>Mobiles({{Mobile}})</span> &nbsp;
+            <input type="radio" name="filter" value="HeadPhone" [(ngModel)]="filtertext" (change)="RaisingEvent()">
+            <span>Head Phones({{HeadPhone}})</span> &nbsp;
+            <input type="radio" name="filter" value="Powerbank" [(ngModel)]="filtertext" (change)="RaisingEvent()">
+            <span>Powerbank({{Powerbank}})</span>
+        </div>
+    </div>
+</div>
+<br>
