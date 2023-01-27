@@ -56,7 +56,9 @@ async function FindEmpdata(Empid) {
 async function LeaveApproval(empid, name, from, to, type, comment) {
     //console.log(empid, name, from, to, type, comment)
     try {
-        const result = await client.connect();
+        const result = await client.connect()
+           .then(() => console.log("db is connected"))
+            .catch((err) => console.log(err, "it's a Error"))
         db = result.db(dbname);
         collection = db.collection('Emp_LeaveApproval');
         const finaldata = await collection.insertOne(
