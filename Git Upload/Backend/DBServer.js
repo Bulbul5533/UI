@@ -12,7 +12,9 @@ app.use(express.json());
 
 async function getData() {
     try {
-        const result = await client.connect();
+        const result = await client.connect()
+           .then(() => console.log("db is connected"))
+            .catch((err) => console.log(err, "it's a Error"))
         db1 = result.db(dbname);
         collection = db1.collection('emp_Basic_Info')
         const finaldata = await collection.find({}).toArray();
@@ -39,7 +41,9 @@ async function UserCheck(Username, password) {
 
 async function FindEmpdata(Empid) {
     try {
-        const result = await client.connect();
+        const result = await client.connect()
+           .then(() => console.log("db is connected"))
+            .catch((err) => console.log(err, "it's a Error"))
         db = result.db(dbname);
         collection = db.collection('emp_Basic_Info');
         const finaldata = await collection.find({ "Employee_id": { $eq: Empid } }).toArray();
@@ -75,7 +79,9 @@ async function LeaveApproval(empid, name, from, to, type, comment) {
 
 async function EmpAprovals(empid) {
     try {
-        const result = await client.connect();
+        const result = await client.connect()
+           .then(() => console.log("db is connected"))
+            .catch((err) => console.log(err, "it's a Error"))
         db = result.db(dbname);
         collection = db.collection('Emp_LeaveApproval');
         const finaldata = await collection.find({ "Employee_id": { $eq: empid } }).toArray();
@@ -88,7 +94,9 @@ async function EmpAprovals(empid) {
 
 async function getAllApprovals() {
     try {
-        const result = await client.connect();
+        const result = await client.connect()
+           .then(() => console.log("db is connected"))
+            .catch((err) => console.log(err, "it's a Error"))
         db = result.db(dbname);
         collection = db.collection('Emp_LeaveApproval');
         const finaldata = await collection.find({ "Approval_Status": 0 }).toArray();
@@ -101,7 +109,8 @@ async function getAllApprovals() {
 
 async function ApproveRequest(ApprovalID) {
     try {
-        const result = await client.connect();
+        const result = await client.connect()   .then(() => console.log("db is connected"))
+            .catch((err) => console.log(err, "it's a Error"))
         db = result.db(dbname);
         collection = db.collection('Emp_LeaveApproval');
         const finaldata = await collection.updateOne({ "Employee_id": ApprovalID }, { $set: { "Approval_Status": 1 } }) //Approve Leave
@@ -129,7 +138,9 @@ async function CancelApprovals(ApprovalID) {
 
 async function CollectDept() {
     try {
-        const result = await client.connect();
+        const result = await client.connect()
+           .then(() => console.log("db is connected"))
+            .catch((err) => console.log(err, "it's a Error"))
         db = result.db(dbname);
         collection = db.collection('Emp_departments');
         const finaldata = await collection.find({}).toArray();
@@ -143,7 +154,9 @@ async function CollectDept() {
 
 async function UpdateEmpDetails(Employee_id, Updateddetails) {
     try {
-        const result = await client.connect();
+        const result = await client.connect()
+           .then(() => console.log("db is connected"))
+            .catch((err) => console.log(err, "it's a Error"))
         db = result.db(dbname);
         collection = db.collection('emp_Basic_Info')
         var findingEmpData = await collection.find({ "Employee_id": { $eq: Employee_id } }).toArray();
@@ -175,7 +188,9 @@ async function UpdateEmpDetails(Employee_id, Updateddetails) {
 
 async function NewEmployee(Emp_info) {
     try {
-        const result = await client.connect();
+        const result = await client.connect()
+           .then(() => console.log("db is connected"))
+            .catch((err) => console.log(err, "it's a Error"))
         db = result.db(dbname);
         const finaldata = await Insertdata('emp_Basic_Info', Emp_info);
         // console.log('Finaldata', finaldata);
@@ -205,7 +220,9 @@ async function NewEmployee(Emp_info) {
 
 async function CollectingData() {
     try {
-        const result = await client.connect();
+        const result = await client.connect()
+           .then(() => console.log("db is connected"))
+            .catch((err) => console.log(err, "it's a Error"))
         // console.log('result',result)
         db = result.db(dbname1);
         collection = db.collection('ProductsList');
@@ -223,7 +240,9 @@ async function CollectingData() {
 async function CollProductinfo(Prodid) {
     try {
         var productid = parseInt(Prodid)
-        const result = await client.connect();
+        const result = await client.connect()
+           .then(() => console.log("db is connected"))
+            .catch((err) => console.log(err, "it's a Error"))
         db = result.db(dbname1);
         collection = db.collection('ProductsList');
         //console.log('id', Prodid)
